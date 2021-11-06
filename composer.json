@@ -1,9 +1,9 @@
 {
-  "name": "inherelab/php-pkg-template",
+  "name": "phppkg/ini",
   "description": "TODO: package description",
   "type": "template",
   "license": "MIT",
-  "homepage": "https://github.com/inherelab/php-pkg-template",
+  "homepage": "https://github.com/phppkg/ini",
   "authors": [
     {
       "name": "inhere",
@@ -17,12 +17,12 @@
   },
   "autoload": {
     "psr-4": {
-      "InhereLab\\DemoPkg\\": "src/"
+      "PhpPkg\\Ini\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "InhereLab\\DemoPkgTest\\": "test/"
+      "PhpPkg\\IniTest\\": "test/"
     }
   },
   "bin": [

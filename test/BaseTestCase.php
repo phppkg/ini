@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace InhereLab\DemoPkgTest;
+namespace PhpPkg\IniTest;
 
 use PHPUnit\Framework\TestCase;
 use ReflectionException;
@@ -11,7 +11,7 @@ use Throwable;
 /**
  * Class BaseTestCase
  *
- * @package InhereLab\DemoPkgTest
+ * @package PhpPkg\IniTest
  */
 abstract class BaseTestCase extends TestCase
 {
@@ -39,10 +39,10 @@ abstract class BaseTestCase extends TestCase
         // $class  = new \ReflectionClass($class);
         // $method = $class->getMethod($method);
 
-        $method = new ReflectionMethod($class, $method);
-        $method->setAccessible(true);
+        $refMth = new ReflectionMethod($class, $method);
+        $refMth->setAccessible(true);
 
-        return $method;
+        return $refMth;
     }
 
     /**
