@@ -13,9 +13,8 @@ use Throwable;
  *
  * @package PhpPkg\IniTest
  */
-abstract class BaseTestCase extends TestCase
+abstract class IniTestCase extends TestCase
 {
-
     /**
      * get method for test protected and private method
      *
@@ -36,9 +35,6 @@ abstract class BaseTestCase extends TestCase
      */
     protected static function getMethod($class, string $method): ReflectionMethod
     {
-        // $class  = new \ReflectionClass($class);
-        // $method = $class->getMethod($method);
-
         $refMth = new ReflectionMethod($class, $method);
         $refMth->setAccessible(true);
 
