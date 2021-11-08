@@ -1,7 +1,7 @@
 {
   "name": "phppkg/ini",
   "description": "An enhanced PHP INI parser",
-  "type": "template",
+  "type": "library",
   "license": "MIT",
   "homepage": "https://github.com/phppkg/ini",
   "keywords": [

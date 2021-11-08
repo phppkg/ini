@@ -1,10 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Inhere\KiteTest\Lib\Parser;
+namespace PhpPkg\IniTest;
 
-use Inhere\Kite\Lib\Parser\IniParser;
 use PhpPkg\Ini\Ini;
-use PhpPkg\IniTest\IniTestCase;
+use PhpPkg\Ini\IniParser;
 use function strtoupper;
 use function vdump;
 
