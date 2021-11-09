@@ -12,6 +12,14 @@ use Traversable;
 class IniEncoder
 {
     /**
+     * @return static
+     */
+    public static function new(): self
+    {
+        return new self();
+    }
+
+    /**
      * @param array|Traversable $data
      * @param int $flags
      *

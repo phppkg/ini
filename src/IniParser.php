@@ -13,7 +13,6 @@ use function str_ends_with;
 use function str_starts_with;
 use function strlen;
 use function strpos;
-use function strstr;
 use function substr;
 use function trim;
 
@@ -79,7 +78,7 @@ class IniParser
      *
      * @return static
      */
-    public static function new(string $source): self
+    public static function new(string $source = ''): self
     {
         return new self($source);
     }
@@ -89,7 +88,7 @@ class IniParser
      *
      * @param string $source
      */
-    public function __construct(string $source)
+    public function __construct(string $source = '')
     {
         $this->source = $source;
     }
@@ -280,6 +279,28 @@ class IniParser
     public function getSource(): string
     {
         return $this->source;
+    }
+
+    /**
+     * @param string $source
+     *
+     * @return IniParser
+     */
+    public function setSource(string $source): self
+    {
+        $this->source = $source;
+        return $this;
+    }
+
+    /**
+     * @param callable $interceptor
+     *
+     * @return IniParser
+     */
+    public function addInterceptor(callable $interceptor): self
+    {
+        $this->interceptors[] = $interceptor;
+        return $this;
     }
 
     /**
