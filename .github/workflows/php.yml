@@ -10,14 +10,14 @@ on:
 
 jobs:
   test:
-    name: Test on php ${{ matrix.php}} and ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+    name: Test on php ${{ matrix.php}}
+    runs-on: ubuntu-latest
     timeout-minutes: 10
     strategy:
       fail-fast: true
       matrix:
         php: [8.0, 8.1] # 7.2, 7.3,
-        os: [ubuntu-latest, macOS-latest] # windows-latest,
+#        os: [ubuntu-latest] # macOS-latest, windows-latest,
 #        include: # will not testing on php 7.2
 #          - os: 'ubuntu-latest'
 #            php: '7.2'
