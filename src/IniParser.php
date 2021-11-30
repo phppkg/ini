@@ -223,8 +223,8 @@ class IniParser
         // in section. eg: [arrayName] -> $sectionName='arrayName'
         $section = $this->sectionName;
 
-        // is list array value. eg `[] = "arr_elem_one"`
-        if ($key === '[]') {
+        // is list array value. eg `- = "arr_elem_one"` `[] = "arr_elem_one"`
+        if ($key === '-' || $key === '[]') {
             if (!isset($this->data[$section]) || !is_array($this->data[$section])) {
                 $this->data[$section] = [];
             }

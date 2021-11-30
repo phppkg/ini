@@ -27,13 +27,13 @@ abstract class IniTestCase extends TestCase
      * $ret = $rftMth->invokeArgs($obj, $invokeArgs);
      * ```
      *
-     * @param string|object $class
+     * @param object|string $class
      * @param string $method
      *
      * @return ReflectionMethod
      * @throws ReflectionException
      */
-    protected static function getMethod($class, string $method): ReflectionMethod
+    protected static function getMethod(object|string $class, string $method): ReflectionMethod
     {
         $refMth = new ReflectionMethod($class, $method);
         $refMth->setAccessible(true);

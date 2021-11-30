@@ -28,7 +28,7 @@ composer require phppkg/ini
 
 example ini:
 
-```text
+```ini
 ; comments line
 // comments line
 # comments line
@@ -44,19 +44,19 @@ multi-line = '''
 this is
   a multi
  line string
- '''
+'''
 
 # simple inline list array
 inlineList = [ab, 23, 34.5]
 
-# simple multi-line list array, equals the 'simpleList'
+# simple multi-line list array, equals the 'simpleList1'
 simpleList[] = 567
 simpleList[] = "some value"
 
 # simple multi-line list array
 [simpleList1]
-[] = 567
-[] = "some value"
+- = 567
+- = "some value"
 
 # simple k-v map
 [simpleMap]
