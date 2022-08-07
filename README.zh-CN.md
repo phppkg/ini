@@ -5,21 +5,20 @@
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/phppkg/ini)](https://github.com/phppkg/ini)
 [![Actions Status](https://github.com/phppkg/ini/workflows/Unit-Tests/badge.svg)](https://github.com/phppkg/ini/actions)
 
-💪 An enhanced `INI` format parser written in PHP.
+💪 PHP编写的一个增强的 `INI` 格式解析器。
 
-- auto convert data type, eg: `int, bool, float`
-- support encode data to INI string.
-- ignores commented lines that start with ";" or "#"
-  - ignores broken lines that do not have "="
-- supports array values and array value keys
-- enhance: supports inline list array value
-- enhance: supports multi line string. use `'''` or `"""`
-- enhance: supports add interceptor before collect value
+- 自动转换数据类型，例如：`int, bool, float`
+- 支持将数据编码为 `INI` 字符串。
+- 忽略以 `;` 或者 `＃` 开头的注释行 
+- 支持数组值和数组值键
+- 增强：支持内联数组值
+- 增强：支持多行字符串。 使用 `'''` 或 `"""`
+- 增强：支持在收集值之前添加拦截器
 - TODO: support parse ENV var. `${SHELL | bash}`
 
-> **[中文说明](README.zh-CN.md)**
+> **[EN README](README.md)**
 
-## Install
+## 安装
 
 - Required PHP 8.0+
 
@@ -29,7 +28,7 @@
 composer require phppkg/ini
 ```
 
-## Usage
+## 使用
 
 example ini:
 
@@ -80,12 +79,12 @@ val_arr_two[6] = "key_6"
 val_arr_two[some_key] = "some_key_value"
 ```
 
-### Decode
+### 解析为数据
 
-Decode from INI string.
+usage:
 
 ```php
-use PhpPkg\Ini\Ini;use Toolkit\Stdlib\Std\Collection;
+use PhpPkg\Ini\Ini;
 
 $data = Ini::decode($ini);
 vdump($data);
@@ -139,13 +138,13 @@ array(13) {
 }
 ```
 
-### Decode file
+### 从文件解析
 
 ```php
 $data = Ini::decodeFile($iniFile);
 ```
 
-## Encode
+## 编码数据为INI
 
 Encode data to INI string.
 
