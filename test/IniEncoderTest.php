@@ -30,7 +30,7 @@ class IniEncoderTest extends IniTestCase
         $ini = Ini::encode($data);
 
         $this->assertNotEmpty($ini);
-        $this->assertStringContainsString('[arrKey]', $ini);
+        $this->assertStringContainsString('arrKey = [', $ini);
         vdump($ini);
     }
 
