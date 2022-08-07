@@ -22,8 +22,8 @@ class IniEncoderTest extends IniTestCase
             'key3' => 'val3',
             'key4' => 'val4',
             'arrKey' => [
-                0 => 'abc',
-                1 => 'def',
+                'abc',
+                'def',
             ],
         ];
 

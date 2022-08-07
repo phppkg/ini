@@ -87,6 +87,9 @@ class IniEncoder
             $defSecIni = $this->encodeSection('', $defSec) . PHP_EOL;
         }
 
+        if (!$strings) {
+            return $defSecIni;
+        }
         return $defSecIni . implode("\n", $strings) . PHP_EOL;
     }
 

@@ -149,7 +149,31 @@ $data = Ini::decodeFile($iniFile);
 Encode data to INI string.
 
 ```php
+$data = [
+    'key0' => 'val0',
+    'key1' => 'val1',
+    'key2' => 'val2',
+    'key3' => 'val3',
+    'key4' => 'val4',
+    'arrKey' => [
+        'abc',
+        'def',
+    ],
+];
+
 $iniString = Ini::encode($data);
+echo $iniString;
+```
+
+**Output**:
+
+```ini
+key0 = val0
+key1 = val1
+key2 = val2
+key3 = val3
+key4 = val4
+arrKey = [abc, def]
 ```
 
 ## License
