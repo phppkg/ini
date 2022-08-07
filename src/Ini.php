@@ -13,17 +13,6 @@ use Traversable;
 class Ini
 {
     /**
-     * @param string $iniFile
-     *
-     * @return array
-     */
-    public static function decodeFile(string $iniFile): array
-    {
-        $ini = File::readAll($iniFile);
-        return self::decode($ini);
-    }
-
-    /**
      * @param string $ini
      * @param int $flags
      *
@@ -31,7 +20,17 @@ class Ini
      */
     public static function decode(string $ini, int $flags = 0): array
     {
-        return (new IniParser($ini))->parse();
+        return (new IniParser($ini))->parse($flags);
+    }
+
+    /**
+     * @param string $iniFile
+     *
+     * @return array
+     */
+    public static function decodeFile(string $iniFile): array
+    {
+        return self::decode(File::readAll($iniFile));
     }
 
     /**
@@ -42,6 +41,6 @@ class Ini
      */
     public static function encode(array|Traversable $data, int $flags = 0): string
     {
-        return (new IniEncoder())->encode($data);
+        return (new IniEncoder($flags))->encode($data);
     }
 }

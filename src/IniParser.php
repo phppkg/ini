@@ -24,6 +24,11 @@ use function trim;
 class IniParser
 {
     /**
+     * @var int
+     */
+    protected int $flags = 0;
+
+    /**
      * current parsed section name.
      *
      * @var string
@@ -101,14 +106,18 @@ class IniParser
      * - ignores broken lines that do not have "="
      * - supports array values and array value keys
      * - enhance: supports inline array value
-     * - enhance: supports multi inline string. use `'''` or `"""`
+     * - enhance: supports multi line string. use `'''` or `"""`
      * - enhance: supports add interceptor before collect value
+     *
+     * @param int $flags
      *
      * @return array
      * @url https://www.php.net/manual/en/function.parse-ini-string.php#111845
      */
-    public function parse(): array
+    public function parse(int $flags = 0): array
     {
+        $this->flags = $flags;
+
         if (!$str = trim($this->source)) {
             return [];
         }
@@ -312,6 +321,14 @@ class IniParser
     {
         $this->interceptors = $interceptors;
         return $this;
+    }
+
+    /**
+     * @param int $flags
+     */
+    public function setFlags(int $flags): void
+    {
+        $this->flags = $flags;
     }
 
     /**
