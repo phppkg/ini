@@ -20,8 +20,6 @@
 
 ## 安装
 
-- Required PHP 8.0+
-
 **composer**
 
 ```bash
